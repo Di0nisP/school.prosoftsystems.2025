@@ -1,4 +1,4 @@
-execve("build/hw01", ["build/hw01"], 0x7ffe60ec0c20 /* 73 vars */) = 0
-write(1, "Hello world!\n", 13)          = 13
-exit(1)                                 = ?
-+++ exited with 1 +++
+execve("build/hw01", ["build/hw01"], 0x7ffc91b1fc20 /* 78 vars */) = 0
+write(1, "Hello, world\n", 13)          = 13
+exit(0)                                 = ?
++++ exited with 0 +++
