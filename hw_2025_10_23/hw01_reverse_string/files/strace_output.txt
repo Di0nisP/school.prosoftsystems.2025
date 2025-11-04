@@ -1,0 +1,13 @@
+execve("build/hw01_reverse_string.out", ["build/hw01_reverse_string.out"], 0x7ffdb3375120 /* 83 vars */) = 0
+write(1, "Enter your string:\n", 19)    = 19
+read(0, "1234567890", 10)               = 10
+read(0, "H", 1)                         = 1
+read(0, "E", 1)                         = 1
+read(0, "L", 1)                         = 1
+read(0, "L", 1)                         = 1
+read(0, "O", 1)                         = 1
+read(0, "\n", 1)                        = 1
+write(1, "Reversed string:\n", 17)      = 17
+write(1, "987654321\n", 10)             = 10
+exit(0)                                 = ?
++++ exited with 0 +++
