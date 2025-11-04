@@ -19,11 +19,7 @@ section .bss
 section .text                       ; объявление секции кода
 _start:                             ; точка входа в программу   
     ; write(stdout, msg0, msg0_sz)                         
-    mov rax, 1                      ; номер системного вызова write
-    mov rdi, 1                      ; fd=1 -> stdout
-    lea rsi, [rel msg0]             ; адрес строки для вывода
-    mov rdx, msg0_sz                ; количество байт
-    syscall
+    PRINT rel msg0, msg0_sz
 
     ; read(stdin, msg0, msg0_sz)
     mov rax, 0                  
@@ -58,11 +54,7 @@ no_trim:
     call reverse_string             ; rsi = адрес перевёрнутой строки             
 
     ; write(stdout, msg1, msg1_sz)
-    mov rax, 1                    
-    mov rdi, 1                    
-    lea rsi, [rel msg1]               
-    mov rdx, msg1_sz                    
-    syscall
+    PRINT rel msg1, msg1_sz
 
     ; write(stdout, string, string_sz)
     mov rax, 1                    
