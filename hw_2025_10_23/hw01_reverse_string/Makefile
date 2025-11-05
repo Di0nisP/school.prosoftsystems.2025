@@ -8,7 +8,7 @@ TARGET = hw01_reverse_string
 # Исходники
 SRC = main.asm
 SHARED_SRC = ../shared/io.asm
-INC = ../shared/io.inc
+INC = ../shared/io.inc ../shared/macro.inc
 
 # Объекты
 OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/io.o
@@ -18,7 +18,7 @@ OUT = $(FILES_DIR)/$(TARGET).txt
 STRACE = $(FILES_DIR)/strace_output.txt
 
 # Флаги NASM
-NASMFLAGS = -f elf64
+NASMFLAGS = -f elf64 -I../shared
 
 # Цель по умолчанию
 all: run
@@ -36,7 +36,7 @@ $(BIN): $(OBJ)
 $(BUILD_DIR)/main.o: $(SRC) $(INC)
 	nasm $(NASMFLAGS) $(SRC) -o $@
 
-$(BUILD_DIR)/io.o: $(SHARED_SRC)
+$(BUILD_DIR)/io.o: $(SHARED_SRC) ../shared/macro.inc
 	nasm $(NASMFLAGS) $(SHARED_SRC) -o $@
 
 # Цель: очистка

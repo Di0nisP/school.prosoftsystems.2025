@@ -1,4 +1,5 @@
 %include "../shared/io.inc"         ; подключаем экстерны функций
+%include "../shared/macro.inc"      ; подключаем макросы
 
 global _start                       ; делаем метку метку _start видимой извне
  
